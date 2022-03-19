@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import androidx.navigation.fragment.findNavController
 import com.example.astralapp.databinding.FragmentFormBinding
 import com.google.android.material.datepicker.CalendarConstraints
 import com.google.android.material.datepicker.MaterialDatePicker
@@ -17,6 +18,8 @@ import java.util.*
 class FormFragment : Fragment() {
 
     private lateinit var binding: FragmentFormBinding
+    private lateinit var simpleDateFormat: SimpleDateFormat
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,6 +32,10 @@ class FormFragment : Fragment() {
         }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        simpleDateFormat = SimpleDateFormat(
+            getString(R.string.calendar_date_format),
+            Locale.getDefault()
+        )
         populateHobbies()
         setButtonListener()
         setDateListener()
@@ -52,26 +59,47 @@ class FormFragment : Fragment() {
         (binding.favoriteHobbyInputLayout.editText as AutoCompleteTextView).setAdapter(adapter)
     }
 
-    private fun validateEmptyFields(textInputLayouts: List<TextInputLayout>) {
+    private fun validateEmptyFields(textInputLayouts: List<TextInputLayout>): Boolean {
+        var emptyFields = false
         textInputLayouts.forEach { textInputLayout ->
             if (textInputLayout.editText?.text.isNullOrEmpty()) {
                 textInputLayout.error = getString(R.string.empty_field_error)
+                emptyFields = true
             }
         }
+        return emptyFields
     }
 
     private fun setButtonListener() {
         with(binding) {
             continueButton.setOnClickListener {
-                validateEmptyFields(
-                    listOf(
-                        fullNameInputLayout,
-                        birthDateInputLayout,
-                        postalCodeInputLayout,
-                        favoriteHobbyInputLayout
+                if (!validateEmptyFields(
+                        listOf(
+                            fullNameInputLayout,
+                            birthDateInputLayout,
+                            postalCodeInputLayout,
+                            favoriteHobbyInputLayout
+                        )
                     )
-                )
+                ) {
+                    FormFragmentDirections
+                        .actionFormFragmentToDetailsFragment(generateUser())
+                        .let {
+                            findNavController().navigate(it)
+                        }
+                }
             }
+        }
+    }
+
+    private fun generateUser(): User {
+        with(binding) {
+            return User(
+                fullNameEditText.text.toString(),
+                stringToDate(birthDateEditText.text.toString()),
+                postalCodeEditText.text.toString(),
+                favoriteHobbyEditText.text.toString()
+            )
         }
     }
 
@@ -92,9 +120,7 @@ class FormFragment : Fragment() {
 
         datePicker.show(childFragmentManager, getString(R.string.calendar_fragment_tag))
         datePicker.addOnPositiveButtonClickListener {
-            val sdf = SimpleDateFormat(getString(R.string.calendar_date_format), Locale.getDefault())
-            val date = sdf.format(it)
-            binding.birthDateEditText.setText(date)
+            binding.birthDateEditText.setText(dateToString(it))
         }
     }
 
@@ -125,5 +151,7 @@ class FormFragment : Fragment() {
             .build()
     }
 
+    private fun stringToDate(string: String) = simpleDateFormat.parse(string)
 
+    private fun dateToString(date: Long) = simpleDateFormat.format(date)
 }

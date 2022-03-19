@@ -15,6 +15,7 @@
     <string name="button_label_continue">Continuar</string>
     <string name="postal_code_error">La longitud máxima es de 5 caracteres</string>
     <string name="empty_field_error">Este campo es obligatorio</string>
+
     <string name="movies_hobby">Cine</string>
     <string name="cooking_hobby">Cocinar</string>
     <string name="sports_hobby">Deporte</string>
@@ -25,6 +26,7 @@
     <string name="theater_hobby">Teatro</string>
     <string name="videogames_hobby">Videojuegos</string>
     <string name="yoga_hobby">Yoga</string>
+
     <string name="utc_timezone">UTC</string>
     <string name="calendar_entry_message">Selecciona una fecha</string>
     <string name="calendar_fragment_tag">DATE_PICKER_FRAGMENT</string>
@@ -35,4 +37,31 @@
     <string name="horoscope_label">Horóscopo</string>
     <string name="postal_code_pattern">Código postal: %s</string>
     <string name="postal_code_referendum">Postal code referendum</string>
+    <string name="user_retrieve_identifier">user</string>
+    
+    <string name="zodiac_sign_capricorn">Capricornio</string>
+    <string name="zodiac_sign_gemini">Geminis</string>
+    <string name="zodiac_sign_virgo">Virgo</string>
+    <string name="zodiac_sign_leo">Leo</string>
+    <string name="zodiac_sign_aquarius">Acuario</string>
+    <string name="zodiac_sign_aries">Aries</string>
+    <string name="zodiac_sign_cancer">Cáncer</string>
+    <string name="zodiac_sign_libra">Libra</string>
+    <string name="zodiac_sign_scorpio">Escorpio</string>
+    <string name="zodiac_sign_taurus">Tauro</string>
+    <string name="zodiac_sign_pisces">Piscis</string>
+    <string name="zodiac_sign_sagittarius">Sagitario</string>
+
+    <string name="chinese_sign_ox">Buey</string>
+    <string name="chinese_sign_tiger">Tigre</string>
+    <string name="chinese_sign_rabbit">Conejo</string>
+    <string name="chinese_sign_dragon">Dragon</string>
+    <string name="chinese_sign_snake">Serpiente</string>
+    <string name="chinese_sign_horse">Caballo</string>
+    <string name="chinese_sign_goat">Cabra</string>
+    <string name="chinese_sign_monkey">Mono</string>
+    <string name="chinese_sign_rooster">Gallo</string>
+    <string name="chinese_sign_dog">Perro</string>
+    <string name="chinese_sign_pig">Cerdo</string>
+    <string name="chinese_sign_rat">Rata</string>
 </resources>
