@@ -1,5 +1,6 @@
 package com.example.astralapp
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.LinearGradient
 import android.graphics.Shader
@@ -71,7 +72,8 @@ class SplashActivity : AppCompatActivity() {
             logoImageView.visibility = View.VISIBLE
             anim.duration = 2000
             anim.doOnEnd {
-
+                startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+                finish()
             }
             anim.start()
 
