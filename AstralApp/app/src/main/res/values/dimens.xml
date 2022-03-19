@@ -5,4 +5,7 @@
     <dimen name="splash_app_details_text_size">12sp</dimen>
     <dimen name="splash_margin">16dp</dimen>
     <dimen name="match_constraint">0dp</dimen>
+
+    <dimen name="form_fragment_elements_margin">16dp</dimen>
+    <dimen name="list_hobbies_item_padding">8dp</dimen>
 </resources>

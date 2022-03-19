@@ -17,4 +17,9 @@
     <color name="primaryTextColor">#ffffff</color>
     <color name="secondaryTextColor">#000000</color>
 
+    <!--Gradient-->
+    <color name="gradientEnd"> #FF695fee </color>
+    <color name="gradientMid"> #FF8c40f9 </color>
+    <color name="gradientStart">#FF148CDC</color>
+
 </resources>

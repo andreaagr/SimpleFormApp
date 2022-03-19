@@ -7,4 +7,26 @@
     <string name="gradient_end"> #FF695fee </string>
     <string name="gradient_mid"> #FF8c40f9 </string>
     <string name="gradient_start">#FF148CDC</string>
+    <!-- Form fragment -->
+    <string name="full_name_hint">Nombre completo</string>
+    <string name="date_of_brith_hint">Fecha de nacimiento</string>
+    <string name="postal_code_hint">Código postal</string>
+    <string name="favorite_hobby_hint">Pasatiempo</string>
+    <string name="button_label_continue">Continuar</string>
+    <string name="postal_code_error">La longitud máxima es de 5 caracteres</string>
+    <string name="empty_field_error">Este campo es obligatorio</string>
+    <string name="movies_hobby">Cine</string>
+    <string name="cooking_hobby">Cocinar</string>
+    <string name="sports_hobby">Deporte</string>
+    <string name="photo_hobby">Fotografía</string>
+    <string name="board_games_hobby">Juegos de mesa</string>
+    <string name="modeling_hobby">Modelismo</string>
+    <string name="music_hobby">Música</string>
+    <string name="theater_hobby">Teatro</string>
+    <string name="videogames_hobby">Videojuegos</string>
+    <string name="yoga_hobby">Yoga</string>
+    <string name="utc_timezone">UTC</string>
+    <string name="calendar_entry_message">Selecciona una fecha</string>
+    <string name="calendar_fragment_tag">DATE_PICKER_FRAGMENT</string>
+    <string name="calendar_date_format">dd/MM/yyyy</string>
 </resources>
