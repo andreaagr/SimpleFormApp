@@ -8,4 +8,12 @@
 
     <dimen name="form_fragment_elements_margin">16dp</dimen>
     <dimen name="list_hobbies_item_padding">8dp</dimen>
+
+    <dimen name="card_view_details_image_size">100dp</dimen>
+    <dimen name="card_view_details_margin">8dp</dimen>
+
+    <dimen name="margin_detail_fragment">16dp</dimen>
+    <dimen name="margin_name_detail_fragment">8dp</dimen>
+    <dimen name="text_size_name_detail_fragment">34sp</dimen>
+    <dimen name="padding_full_row_card">10dp</dimen>
 </resources>

@@ -29,4 +29,10 @@
     <string name="calendar_entry_message">Selecciona una fecha</string>
     <string name="calendar_fragment_tag">DATE_PICKER_FRAGMENT</string>
     <string name="calendar_date_format">dd/MM/yyyy</string>
+
+    <string name="card_view_content_description">Descriptive image</string>
+    <string name="new_search">Nueva consulta</string>
+    <string name="horoscope_label">Horóscopo</string>
+    <string name="postal_code_pattern">Código postal: %s</string>
+    <string name="postal_code_referendum">Postal code referendum</string>
 </resources>
