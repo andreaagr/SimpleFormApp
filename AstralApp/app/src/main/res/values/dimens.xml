@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="splash_logo_size">200dp</dimen>
+    <dimen name="splash_app_name_text_size">50sp</dimen>
+    <dimen name="splash_app_details_text_size">12sp</dimen>
+    <dimen name="splash_margin">16dp</dimen>
+</resources>

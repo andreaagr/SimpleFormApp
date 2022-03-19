@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">AstralApp</string>
+    <string name="app_logo_content_description">App logo</string>
+    <string name="app_version">Versión 1.0</string>
+    <string name="app_developer">Developed by Andrea García</string>
+    <!--Gradient-->
+    <string name="gradient_end"> #FF695fee </string>
+    <string name="gradient_mid"> #FF8c40f9 </string>
+    <string name="gradient_start">#FF148CDC</string>
 </resources>
