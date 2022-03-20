@@ -1,6 +1,7 @@
-package com.example.astralapp
+package com.example.astralapp.utils
 
 import android.content.Context
+import com.example.astralapp.R
 import java.text.SimpleDateFormat
 import java.util.*
 

@@ -1,8 +1,13 @@
-package com.example.astralapp
+package com.example.astralapp.ui.fragment.details
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.astralapp.R
+import com.example.astralapp.model.domain.User
+import com.example.astralapp.model.presentation.CardInfo
+import com.example.astralapp.model.presentation.UserPresentation
+import com.example.astralapp.utils.ResourceManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import java.util.*
 import javax.inject.Inject

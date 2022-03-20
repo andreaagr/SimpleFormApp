@@ -1,6 +1,7 @@
-package com.example.astralapp
+package com.example.astralapp.di.module
 
 import android.content.Context
+import com.example.astralapp.utils.ResourceManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

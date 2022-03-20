@@ -1,4 +1,4 @@
-package com.example.astralapp
+package com.example.astralapp.model.presentation
 
 import java.util.*
 

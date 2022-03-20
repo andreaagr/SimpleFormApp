@@ -1,8 +1,8 @@
-package com.example.astralapp
+package com.example.astralapp.model.domain
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
-import java.util.Date
+import java.util.*
 
 @Parcelize
 data class User (

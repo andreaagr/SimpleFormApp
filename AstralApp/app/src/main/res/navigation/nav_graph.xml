@@ -7,22 +7,26 @@
 
     <fragment
         android:id="@+id/formFragment"
-        android:name="com.example.astralapp.FormFragment"
+        android:name="com.example.astralapp.ui.fragment.form.FormFragment"
         android:label="Form"
         tools:layout="@layout/fragment_form">
         <action
             android:id="@+id/action_formFragment_to_detailsFragment"
             app:destination="@id/detailsFragment"
-            app:popUpTo="@id/formFragment"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.example.astralapp.DetailsFragment"
+        android:name="com.example.astralapp.ui.fragment.details.DetailsFragment"
         android:label="Details"
         tools:layout="@layout/fragment_details">
         <argument
             android:name="user"
-            app:argType="com.example.astralapp.User" />
+            app:argType="com.example.astralapp.model.domain.User" />
+        <action
+            android:id="@+id/action_detailsFragment_to_formFragment"
+            app:destination="@id/formFragment"
+            app:popUpTo="@id/formFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

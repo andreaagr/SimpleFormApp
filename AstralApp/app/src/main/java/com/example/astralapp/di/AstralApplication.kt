@@ -1,4 +1,4 @@
-package com.example.astralapp
+package com.example.astralapp.di
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

@@ -1,7 +1,8 @@
-package com.example.astralapp
+package com.example.astralapp.utils
 
 import android.text.Editable
 import android.text.TextWatcher
+import com.example.astralapp.R
 import com.google.android.material.textfield.TextInputLayout
 
 class ValidationWatcher(

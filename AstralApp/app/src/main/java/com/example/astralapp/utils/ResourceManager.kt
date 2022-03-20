@@ -1,6 +1,7 @@
-package com.example.astralapp
+package com.example.astralapp.utils
 
 import android.content.Context
+import com.example.astralapp.R
 
 class ResourceManager(private val context: Context) {
     val moviesHobby get() = context.getString(R.string.movies_hobby)

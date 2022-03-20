@@ -1,14 +1,19 @@
-package com.example.astralapp
+package com.example.astralapp.ui.fragment.form
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.astralapp.R
 import com.example.astralapp.databinding.FragmentFormBinding
+import com.example.astralapp.model.domain.User
+import com.example.astralapp.utils.toDate
+import com.example.astralapp.utils.toStringDate
+import com.example.astralapp.utils.ValidationWatcher
 import com.google.android.material.datepicker.CalendarConstraints
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.textfield.TextInputLayout

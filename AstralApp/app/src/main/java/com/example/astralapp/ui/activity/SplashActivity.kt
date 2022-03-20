@@ -1,14 +1,16 @@
-package com.example.astralapp
+package com.example.astralapp.ui.activity
 
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.LinearGradient
 import android.graphics.Shader
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.ViewAnimationUtils
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.animation.doOnEnd
+import com.example.astralapp.MainActivity
+import com.example.astralapp.R
 import com.example.astralapp.databinding.ActivitySplashBinding
 import kotlin.math.hypot
 
