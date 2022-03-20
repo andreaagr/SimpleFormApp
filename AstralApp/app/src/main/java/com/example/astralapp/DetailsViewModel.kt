@@ -3,12 +3,19 @@ package com.example.astralapp
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import java.util.*
+import javax.inject.Inject
 
-class DetailsViewModel(private val resourceManager: ResourceManager) : ViewModel() {
+@HiltViewModel
+class DetailsViewModel @Inject constructor(
+    private val resourceManager: ResourceManager
+) : ViewModel() {
 
     private val calendar = Calendar.getInstance()
     private val currentYear = calendar.get(Calendar.YEAR)
+    private val currentMonth = calendar.get(Calendar.MONTH)
+    private val currentDay = calendar.get(Calendar.DAY_OF_MONTH)
     private val mapOfZodiacDates = mapOf(
         resourceManager.ariesSign to Pair(Pair(21, 3), Pair(20, 4)),
         resourceManager.taurusSign to Pair(Pair(21, 4), Pair(20, 5)),
@@ -48,22 +55,37 @@ class DetailsViewModel(private val resourceManager: ResourceManager) : ViewModel
             extractDateElements(birthDate)
             val userPresentation = UserPresentation(
                 fullName,
-                getAge(birthDateYear),
+                getAge(birthDateYear, birthDateMonth, birthDateDay),
                 CardInfo(postalCode, R.drawable.direccion),
                 getZodiacSign(
                     birthDateDay,
-                    birthDateMonth
+                    birthDateMonth + 1
                 ),
                 getChineseSign(birthDateYear),
-                getHobbyImage(hobby)
+                getHobbyImage(hobby),
+                birthDate
             )
             _userInformation.value = userPresentation
         }
     }
 
-    private fun getAge(birthDateYear: Int): CardInfo {
+    private fun getAge(year: Int, month: Int, day: Int): CardInfo {
+        val age = if (currentYear != year) {
+            when {
+                currentMonth > month -> (currentYear - year)
+                currentMonth == month -> if (currentDay >= day) {
+                    (currentYear - year)
+                } else {
+                    (currentYear - year - 1)
+                }
+                currentMonth < month -> (currentYear - year - 1)
+                else -> (currentYear - year)
+            }
+        } else {
+            (currentYear - year)
+        }
         return CardInfo(
-            (currentYear - birthDateYear).toString(),
+            age.toString(),
             R.drawable.cake
         )
     }
@@ -71,10 +93,10 @@ class DetailsViewModel(private val resourceManager: ResourceManager) : ViewModel
     private fun getZodiacSign(day: Int, month: Int): CardInfo {
         var zodiacSign = ""
         mapOfZodiacDates.forEach { sign ->
-            if (day >= sign.value.first.first &&
-                month >= sign.value.first.second &&
-                day <= sign.value.second.first &&
-                month <= sign.value.second.second
+            if ((day >= sign.value.first.first &&
+                month == sign.value.first.second) ||
+                (day <= sign.value.second.first &&
+                month == sign.value.second.second)
             ) {
                 zodiacSign = sign.key
             }

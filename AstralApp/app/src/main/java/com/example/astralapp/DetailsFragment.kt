@@ -8,10 +8,13 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.astralapp.databinding.FragmentDetailsBinding
 import com.example.astralapp.databinding.FullRowCardDesignBinding
 import com.example.astralapp.databinding.SingleCardDesignBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailsFragment : Fragment() {
 
     private lateinit var binding: FragmentDetailsBinding
@@ -33,6 +36,7 @@ class DetailsFragment : Fragment() {
             viewModel.calculateUserDetails(user)
         }
         setupObserver()
+        setButtonListener()
     }
 
     private fun setupObserver() {
@@ -44,6 +48,8 @@ class DetailsFragment : Fragment() {
     private fun initView(userPresentation: UserPresentation) {
         with(binding) {
             nameTextView.text = userPresentation.fullName
+            birthDateTextView.text =
+                userPresentation.birthDate?.toStringDate(requireContext()) ?: userPresentation.toString()
             with(userPresentation) {
                 val cards = listOf(
                     Pair(ageCardView, age),
@@ -73,5 +79,11 @@ class DetailsFragment : Fragment() {
                 ContextCompat.getDrawable(it, image)
             }
         )
+    }
+
+    private fun setButtonListener() {
+        binding.newQueryButton.setOnClickListener {
+            findNavController().navigateUp()
+        }
     }
 }

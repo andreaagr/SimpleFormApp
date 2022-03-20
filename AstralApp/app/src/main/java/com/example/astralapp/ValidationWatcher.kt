@@ -23,7 +23,7 @@ class ValidationWatcher(
     }
 
     private fun validatePostalCode(postalCode: String) {
-        if (postalCode.length > 4) {
+        if (postalCode.length > 5) {
             textInputLayout.error = context.getString(R.string.postal_code_error)
         }
     }

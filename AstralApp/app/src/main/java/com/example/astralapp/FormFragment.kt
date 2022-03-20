@@ -12,13 +12,14 @@ import com.example.astralapp.databinding.FragmentFormBinding
 import com.google.android.material.datepicker.CalendarConstraints
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.textfield.TextInputLayout
-import java.text.SimpleDateFormat
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
+@AndroidEntryPoint
 class FormFragment : Fragment() {
 
     private lateinit var binding: FragmentFormBinding
-    private lateinit var simpleDateFormat: SimpleDateFormat
+    private var isCalendarVisible = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,10 +33,6 @@ class FormFragment : Fragment() {
         }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        simpleDateFormat = SimpleDateFormat(
-            getString(R.string.calendar_date_format),
-            Locale.getDefault()
-        )
         populateHobbies()
         setButtonListener()
         setDateListener()
@@ -70,6 +67,14 @@ class FormFragment : Fragment() {
         return emptyFields
     }
 
+    private fun validatePostalCode(): Boolean {
+        val textSize = binding.postalCodeEditText.text?.length != 5
+        if (textSize) {
+            binding.postalCodeInputLayout.error = getString(R.string.postal_code_error)
+        }
+        return textSize
+    }
+
     private fun setButtonListener() {
         with(binding) {
             continueButton.setOnClickListener {
@@ -80,7 +85,7 @@ class FormFragment : Fragment() {
                             postalCodeInputLayout,
                             favoriteHobbyInputLayout
                         )
-                    )
+                    ) && !validatePostalCode()
                 ) {
                     FormFragmentDirections
                         .actionFormFragmentToDetailsFragment(generateUser())
@@ -96,7 +101,7 @@ class FormFragment : Fragment() {
         with(binding) {
             return User(
                 fullNameEditText.text.toString(),
-                stringToDate(birthDateEditText.text.toString()),
+                birthDateEditText.text.toString().toDate(requireContext()),
                 postalCodeEditText.text.toString(),
                 favoriteHobbyEditText.text.toString()
             )
@@ -105,7 +110,10 @@ class FormFragment : Fragment() {
 
     private fun setDateListener() {
         binding.birthDateEditText.setOnClickListener {
-            showDateDialogPicker()
+            if (!isCalendarVisible) {
+                showDateDialogPicker()
+                isCalendarVisible = true
+            }
         }
     }
 
@@ -120,8 +128,11 @@ class FormFragment : Fragment() {
 
         datePicker.show(childFragmentManager, getString(R.string.calendar_fragment_tag))
         datePicker.addOnPositiveButtonClickListener {
-            binding.birthDateEditText.setText(dateToString(it))
+            binding.birthDateEditText.setText(it.toStringDate(requireContext()))
+            isCalendarVisible = false
         }
+        datePicker.addOnCancelListener { isCalendarVisible = false }
+        datePicker.addOnDismissListener { isCalendarVisible = false }
     }
 
     private fun setTextWatcher() {
@@ -150,8 +161,4 @@ class FormFragment : Fragment() {
             .setEnd(endDate)
             .build()
     }
-
-    private fun stringToDate(string: String) = simpleDateFormat.parse(string)
-
-    private fun dateToString(date: Long) = simpleDateFormat.format(date)
 }

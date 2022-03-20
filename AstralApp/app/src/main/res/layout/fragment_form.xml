@@ -44,8 +44,8 @@
             android:id="@+id/birthDateEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="none"
-            android:focusable="false" />
+            android:focusable="false"
+            android:inputType="none" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -66,7 +66,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/postalCodeEditText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="number" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

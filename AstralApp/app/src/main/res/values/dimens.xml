@@ -16,4 +16,6 @@
     <dimen name="margin_name_detail_fragment">8dp</dimen>
     <dimen name="text_size_name_detail_fragment">34sp</dimen>
     <dimen name="padding_full_row_card">10dp</dimen>
+    <dimen name="corner_radius_detail_fragment">10dp</dimen>
+    <dimen name="elevation_card_detail_fragment">10dp</dimen>
 </resources>

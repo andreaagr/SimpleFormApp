@@ -13,7 +13,7 @@
     <string name="postal_code_hint">Código postal</string>
     <string name="favorite_hobby_hint">Pasatiempo</string>
     <string name="button_label_continue">Continuar</string>
-    <string name="postal_code_error">La longitud máxima es de 5 caracteres</string>
+    <string name="postal_code_error">La longitud debe ser 5 caracteres</string>
     <string name="empty_field_error">Este campo es obligatorio</string>
 
     <string name="movies_hobby">Cine</string>

@@ -1,141 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DetailsFragment">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="@dimen/match_constraint"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_detail_fragment"
-        android:layout_marginTop="@dimen/margin_detail_fragment"
-        android:layout_marginEnd="@dimen/margin_detail_fragment"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_detail_fragment"
+            android:layout_marginTop="@dimen/margin_detail_fragment"
+            android:layout_marginEnd="@dimen/margin_detail_fragment"
+            app:cardCornerRadius="@dimen/corner_radius_detail_fragment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/nameTextView"
-                android:layout_width="@dimen/match_constraint"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_name_detail_fragment"
-                android:layout_marginEnd="@dimen/margin_name_detail_fragment"
-                android:fontFamily="@font/astral"
-                android:gravity="center"
-                android:textSize="@dimen/text_size_name_detail_fragment"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="@string/full_name_hint" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    </androidx.cardview.widget.CardView>
+                <TextView
+                    android:id="@+id/nameTextView"
+                    android:layout_width="@dimen/match_constraint"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_name_detail_fragment"
+                    android:layout_marginEnd="@dimen/margin_name_detail_fragment"
+                    android:fontFamily="@font/astral"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_size_name_detail_fragment"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/full_name_hint" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/midGuideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5"/>
+                <TextView
+                    android:id="@+id/birthDateTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/date_of_brith_hint"
+                    app:layout_constraintEnd_toEndOf="@+id/nameTextView"
+                    app:layout_constraintStart_toStartOf="@+id/nameTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
-        android:id="@+id/ageContainer"
-        android:layout_width="@dimen/match_constraint"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_detail_fragment"
-        android:layout_marginEnd="@dimen/margin_detail_fragment"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toStartOf="@+id/midGuideline"
-        app:layout_constraintStart_toStartOf="@+id/cardView"
-        app:layout_constraintTop_toBottomOf="@+id/cardView">
+        </androidx.cardview.widget.CardView>
 
-        <include
-            android:id="@+id/ageCardView"
-            layout="@layout/single_card_design" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/midGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
 
-    </LinearLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ageContainer"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_detail_fragment"
+            android:layout_marginEnd="@dimen/margin_detail_fragment"
+            android:elevation="@dimen/elevation_card_detail_fragment"
+            app:cardCornerRadius="@dimen/corner_radius_detail_fragment"
+            app:layout_constraintEnd_toStartOf="@+id/midGuideline"
+            app:layout_constraintStart_toStartOf="@+id/cardView"
+            app:layout_constraintTop_toBottomOf="@+id/cardView">
 
-    <LinearLayout
-        android:id="@+id/hobbyLayout"
-        android:layout_width="@dimen/match_constraint"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_detail_fragment"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="@+id/cardView"
-        app:layout_constraintStart_toStartOf="@+id/midGuideline"
-        app:layout_constraintTop_toTopOf="@+id/ageContainer">
+            <include
+                android:id="@+id/ageCardView"
+                layout="@layout/single_card_design" />
 
-        <include
-            android:id="@+id/hobbyCardView"
-            layout="@layout/single_card_design" />
+        </androidx.cardview.widget.CardView>
 
-    </LinearLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/hobbyLayout"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_detail_fragment"
+            android:elevation="@dimen/elevation_card_detail_fragment"
+            app:cardCornerRadius="@dimen/corner_radius_detail_fragment"
+            app:layout_constraintEnd_toEndOf="@+id/cardView"
+            app:layout_constraintStart_toStartOf="@+id/midGuideline"
+            app:layout_constraintTop_toTopOf="@+id/ageContainer">
 
-    <LinearLayout
-        android:id="@+id/postalCodeLayout"
-        android:layout_width="@dimen/match_constraint"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_detail_fragment"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="@+id/hobbyLayout"
-        app:layout_constraintStart_toStartOf="@+id/ageContainer"
-        app:layout_constraintTop_toBottomOf="@+id/ageContainer">
+            <include
+                android:id="@+id/hobbyCardView"
+                layout="@layout/single_card_design" />
 
-        <include
-            android:id="@+id/postalCodeCardView"
-            layout="@layout/full_row_card_design" />
+        </androidx.cardview.widget.CardView>
 
-    </LinearLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/postalCodeLayout"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_detail_fragment"
+            android:elevation="@dimen/elevation_card_detail_fragment"
+            app:cardCornerRadius="@dimen/corner_radius_detail_fragment"
+            app:layout_constraintEnd_toEndOf="@+id/hobbyLayout"
+            app:layout_constraintStart_toStartOf="@+id/ageContainer"
+            app:layout_constraintTop_toBottomOf="@+id/ageContainer">
 
-    <LinearLayout
-        android:id="@+id/zodiacLayout"
-        android:layout_width="@dimen/match_constraint"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_detail_fragment"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="@+id/ageContainer"
-        app:layout_constraintStart_toStartOf="@+id/postalCodeLayout"
-        app:layout_constraintTop_toBottomOf="@+id/postalCodeLayout">
+            <include
+                android:id="@+id/postalCodeCardView"
+                layout="@layout/full_row_card_design" />
 
-        <include
-            android:id="@+id/zodiacCardView"
-            layout="@layout/single_card_design" />
+        </androidx.cardview.widget.CardView>
 
-    </LinearLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/zodiacLayout"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_detail_fragment"
+            android:elevation="@dimen/elevation_card_detail_fragment"
+            app:cardCornerRadius="@dimen/corner_radius_detail_fragment"
+            app:layout_constraintEnd_toEndOf="@+id/ageContainer"
+            app:layout_constraintStart_toStartOf="@+id/postalCodeLayout"
+            app:layout_constraintTop_toBottomOf="@+id/postalCodeLayout">
 
-    <LinearLayout
-        android:id="@+id/chineseLayout"
-        android:layout_width="@dimen/match_constraint"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="@+id/postalCodeLayout"
-        app:layout_constraintStart_toStartOf="@+id/hobbyLayout"
-        app:layout_constraintTop_toTopOf="@+id/zodiacLayout">
+            <include
+                android:id="@+id/zodiacCardView"
+                layout="@layout/single_card_design" />
 
-        <include
-            android:id="@+id/chineseCardView"
-            layout="@layout/single_card_design" />
+        </androidx.cardview.widget.CardView>
 
-    </LinearLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/chineseLayout"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/elevation_card_detail_fragment"
+            app:cardCornerRadius="@dimen/corner_radius_detail_fragment"
+            app:layout_constraintEnd_toEndOf="@+id/postalCodeLayout"
+            app:layout_constraintStart_toStartOf="@+id/hobbyLayout"
+            app:layout_constraintTop_toTopOf="@+id/zodiacLayout">
 
-    <Button
-        android:id="@+id/newQueryButton"
-        android:layout_width="@dimen/match_constraint"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_detail_fragment"
-        android:background="@drawable/button_gradient"
-        android:text="@string/new_search"
-        app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/chineseLayout"
-        app:layout_constraintStart_toStartOf="@+id/zodiacLayout" />
+            <include
+                android:id="@+id/chineseCardView"
+                layout="@layout/single_card_design" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/newQueryButton"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_detail_fragment"
+            android:layout_marginBottom="@dimen/margin_detail_fragment"
+            android:background="@drawable/button_gradient"
+            android:text="@string/new_search"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/chineseLayout"
+            app:layout_constraintStart_toStartOf="@+id/zodiacLayout"
+            app:layout_constraintTop_toBottomOf="@+id/chineseLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
