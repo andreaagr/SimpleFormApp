@@ -38,7 +38,7 @@
     <string name="date_of_birth_pattern">Fecha de nacimiento: %s</string>
     <string name="postal_code_pattern">Código postal: %s</string>
     <string name="postal_code_referendum">Referencia al código postal</string>
-    <string name="user_retrieve_identifier">usuario</string>
+    <string name="user_retrieve_identifier">user</string>
     
     <string name="zodiac_sign_capricorn">Capricornio</string>
     <string name="zodiac_sign_gemini">Geminis</string>
