@@ -24,6 +24,14 @@ import java.util.*
 class FormFragment : Fragment() {
 
     private lateinit var binding: FragmentFormBinding
+    private val datePicker by lazy {
+        MaterialDatePicker
+            .Builder
+            .datePicker()
+            .setCalendarConstraints(createCalendarConstraints())
+            .setTitleText(getString(R.string.calendar_entry_message))
+            .build()
+    }
     private var isCalendarVisible = false
 
     override fun onCreateView(
@@ -41,6 +49,7 @@ class FormFragment : Fragment() {
         populateHobbies()
         setButtonListener()
         setDateListener()
+        setDateDialogPickerListeners()
         setTextWatcher()
     }
 
@@ -123,15 +132,10 @@ class FormFragment : Fragment() {
     }
 
     private fun showDateDialogPicker() {
-        val datePicker =
-            MaterialDatePicker
-                .Builder
-                .datePicker()
-                .setCalendarConstraints(createCalendarConstraints())
-                .setTitleText(getString(R.string.calendar_entry_message))
-                .build()
-
         datePicker.show(childFragmentManager, getString(R.string.calendar_fragment_tag))
+    }
+
+    private fun setDateDialogPickerListeners() {
         datePicker.addOnPositiveButtonClickListener {
             binding.birthDateEditText.setText(it.toStringDate(requireContext()))
             isCalendarVisible = false
