@@ -36,6 +36,7 @@
     <string name="card_view_content_description">Descriptive image</string>
     <string name="new_search">New query</string>
     <string name="horoscope_label">Horoscope</string>
+    <string name="date_of_birth_pattern">Birthdate: %s</string>
     <string name="postal_code_pattern">Postal code: %s</string>
     <string name="postal_code_referendum">Postal code referendum</string>
     <string name="user_retrieve_identifier">user</string>

@@ -49,7 +49,8 @@ class DetailsFragment : Fragment() {
         with(binding) {
             nameTextView.text = userPresentation.fullName
             birthDateTextView.text =
-                userPresentation.birthDate?.toStringDate(requireContext()) ?: userPresentation.toString()
+                String.format(getString(R.string.date_of_birth_pattern),
+                    userPresentation.birthDate?.toStringDate(requireContext()) ?: userPresentation.toString())
             with(userPresentation) {
                 val cards = listOf(
                     Pair(ageCardView, age),
