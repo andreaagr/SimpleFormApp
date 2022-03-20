@@ -69,7 +69,8 @@ class DetailsFragment : Fragment() {
     }
 
     private fun setCardInfo(cardView: FullRowCardDesignBinding, cardInfo: CardInfo) {
-        cardView.postalCodeTextView.text = cardInfo.name
+        cardView.postalCodeTextView.text =
+            String.format(getString(R.string.postal_code_pattern), cardInfo.name)
         loadImage(cardView.postalCodeImageView, cardInfo.image)
     }
 

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AstralApp</string>
+    <string name="app_logo_content_description">App logo</string>
+    <string name="app_version">Version 1.0</string>
+    <string name="app_developer">Developed by Andrea García</string>
+    <!--Gradient-->
+    <string name="gradient_end"> #FF695fee </string>
+    <string name="gradient_mid"> #FF8c40f9 </string>
+    <string name="gradient_start">#FF148CDC</string>
+    <!-- Form fragment -->
+    <string name="full_name_hint">Full name</string>
+    <string name="date_of_brith_hint">Birthdate</string>
+    <string name="postal_code_hint">Postal code</string>
+    <string name="favorite_hobby_hint">Hobby</string>
+    <string name="button_label_continue">Continue</string>
+    <string name="postal_code_error">Length must be 5 characters</string>
+    <string name="empty_field_error">This field is required</string>
+
+    <string name="movies_hobby">Movies</string>
+    <string name="cooking_hobby">Cooking</string>
+    <string name="sports_hobby">Sport</string>
+    <string name="photo_hobby">Photography</string>
+    <string name="board_games_hobby">Board games</string>
+    <string name="modeling_hobby">Modelling</string>
+    <string name="music_hobby">Music</string>
+    <string name="theater_hobby">Theater</string>
+    <string name="videogames_hobby">Videogames</string>
+    <string name="yoga_hobby">Yoga</string>
+
+    <string name="utc_timezone">UTC</string>
+    <string name="calendar_entry_message">Select a date</string>
+    <string name="calendar_fragment_tag">DATE_PICKER_FRAGMENT</string>
+    <string name="calendar_date_format">dd/MM/yyyy</string>
+
+    <string name="card_view_content_description">Descriptive image</string>
+    <string name="new_search">New query</string>
+    <string name="horoscope_label">Horoscope</string>
+    <string name="postal_code_pattern">Postal code: %s</string>
+    <string name="postal_code_referendum">Postal code referendum</string>
+    <string name="user_retrieve_identifier">user</string>
+
+    <string name="zodiac_sign_capricorn">Capricorn</string>
+    <string name="zodiac_sign_gemini">Gemini</string>
+    <string name="zodiac_sign_virgo">Virgo</string>
+    <string name="zodiac_sign_leo">Leo</string>
+    <string name="zodiac_sign_aquarius">Aquarius</string>
+    <string name="zodiac_sign_aries">Aries</string>
+    <string name="zodiac_sign_cancer">Cancer</string>
+    <string name="zodiac_sign_libra">Libra</string>
+    <string name="zodiac_sign_scorpio">Scorpio</string>
+    <string name="zodiac_sign_taurus">Taurus</string>
+    <string name="zodiac_sign_pisces">Pisces</string>
+    <string name="zodiac_sign_sagittarius">Sagittarius</string>
+
+    <string name="chinese_sign_ox">Ox</string>
+    <string name="chinese_sign_tiger">Tiger</string>
+    <string name="chinese_sign_rabbit">Rabbit</string>
+    <string name="chinese_sign_dragon">Dragon</string>
+    <string name="chinese_sign_snake">Snake</string>
+    <string name="chinese_sign_horse">Horse</string>
+    <string name="chinese_sign_goat">Goat</string>
+    <string name="chinese_sign_monkey">Monkey</string>
+    <string name="chinese_sign_rooster">Rooster</string>
+    <string name="chinese_sign_dog">Dog</string>
+    <string name="chinese_sign_pig">Pig</string>
+    <string name="chinese_sign_rat">Rat</string>
+
+</resources>

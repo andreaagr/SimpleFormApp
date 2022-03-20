@@ -2,7 +2,7 @@
     <string name="app_name">AstralApp</string>
     <string name="app_logo_content_description">App logo</string>
     <string name="app_version">Versión 1.0</string>
-    <string name="app_developer">Developed by Andrea García</string>
+    <string name="app_developer">Elaborado por Andrea García</string>
     <!--Gradient-->
     <string name="gradient_end"> #FF695fee </string>
     <string name="gradient_mid"> #FF8c40f9 </string>
@@ -32,12 +32,12 @@
     <string name="calendar_fragment_tag">DATE_PICKER_FRAGMENT</string>
     <string name="calendar_date_format">dd/MM/yyyy</string>
 
-    <string name="card_view_content_description">Descriptive image</string>
+    <string name="card_view_content_description">Imagen descriptiva</string>
     <string name="new_search">Nueva consulta</string>
     <string name="horoscope_label">Horóscopo</string>
     <string name="postal_code_pattern">Código postal: %s</string>
-    <string name="postal_code_referendum">Postal code referendum</string>
-    <string name="user_retrieve_identifier">user</string>
+    <string name="postal_code_referendum">Referencia al código postal</string>
+    <string name="user_retrieve_identifier">usuario</string>
     
     <string name="zodiac_sign_capricorn">Capricornio</string>
     <string name="zodiac_sign_gemini">Geminis</string>
